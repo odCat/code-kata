@@ -17,4 +17,24 @@ public class SortTest
 
         assertArrayEquals(expected, actual);
     }
+
+    @Test
+    public void testBubbleSortEmpty() {
+        int[] nums = {};
+
+        int[] actual = bubbleSort(nums);
+        int[] expected = {};
+
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void testBubbleSortOneElement() {
+        int[] nums = { 5 };
+
+        int[] actual = bubbleSort(nums);
+        int[] expected = { 5 };
+
+        assertArrayEquals(expected, actual);
+    }
 }
