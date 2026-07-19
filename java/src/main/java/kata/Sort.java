@@ -9,4 +9,8 @@ public class Sort
     public static int[] insertSort(int[] nums) {
         return nums;
     }
+
+    public static int[] selectSort(int[] nums) {
+        return nums;
+    }
 }
