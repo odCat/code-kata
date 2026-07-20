@@ -1,6 +1,7 @@
 package helper;
 
 
+@SuppressWarnings("unused")
 public class Helper {
 
     public static void printArray(int[] nums) {
