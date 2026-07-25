@@ -1,5 +1,3 @@
-import pytest
-
 from kata.merge_sort import merge_sort, merge
 
 
