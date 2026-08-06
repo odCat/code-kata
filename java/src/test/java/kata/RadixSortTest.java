@@ -1,6 +1,6 @@
 package kata;
 
-import static kata.QuickSort.quickSort;
+import static kata.RadixSort.radixSort;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 import org.junit.jupiter.api.Test;
@@ -19,20 +19,20 @@ public class RadixSortTest
     }
 
     @Test
-    public void testQuickSortEmpty() {
+    public void testRadixSortEmpty() {
         int[] nums = {};
 
-        int[] actual = quickSort(nums);
+        int[] actual = radixSort(nums);
         int[] expected = {};
 
         assertArrayEquals(expected, actual);
     }
 
     @Test
-    public void testQuickSortOneElement() {
+    public void testRadixSortOneElement() {
         int[] nums = { 5 };
 
-        int[] actual = quickSort(nums);
+        int[] actual = radixSort(nums);
         int[] expected = { 5 };
 
         assertArrayEquals(expected, actual);

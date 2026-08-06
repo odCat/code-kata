@@ -19,6 +19,26 @@ public class QuickSortTest
     }
 
     @Test
+    public void testQuickSortAscending() {
+        int[] nums = { 2, 3 ,5, 6, 11, 12 };
+
+        int[] actual = quickSort(nums);
+        int[] expected = { 2, 3 ,5, 6, 11, 12 };
+
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void testQuickSortDescending() {
+        int[] nums = { 101, 100, 22, 7, 6, 4, 2, 1, 0 };
+
+        int[] actual = quickSort(nums);
+        int[] expected = { 0, 1, 2, 4, 6, 7, 22, 100, 101 };
+
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
     public void testQuickSortEmpty() {
         int[] nums = {};
 

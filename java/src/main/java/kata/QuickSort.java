@@ -1,5 +1,7 @@
 package kata;
 
+import static helper.Helper.swap;
+
 
 public class QuickSort
 {
