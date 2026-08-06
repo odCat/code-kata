@@ -9,10 +9,10 @@ import org.junit.jupiter.api.Test;
 public class RadixSortTest
 {
    @Test
-    public void testQuickSort() {
+    public void testRadixSort() {
         int[] nums = { 342, 58923, 1, 98, 98798, 58939 };
 
-        int[] actual = quickSort(nums);
+        int[] actual = radixSort(nums);
         int[] expected = { 1, 98, 342, 58923, 58939, 98798 };
 
         assertArrayEquals(expected, actual);
