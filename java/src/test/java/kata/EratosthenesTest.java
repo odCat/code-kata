@@ -15,4 +15,12 @@ public class EratosthenesTest
 
         assertArrayEquals(expected, actual);
     }
+    
+    @Test
+    void testLastElementIsPrime() {
+        int[] actual = findPrimes(23);
+        int[] expected = { 2, 3, 5, 7, 11, 13, 17, 19, 23 };
+
+        assertArrayEquals(expected, actual);
+    }
 }
