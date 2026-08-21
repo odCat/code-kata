@@ -35,3 +35,13 @@ class TestMergeSort(object):
         expected = [ 0, 2, 3, 9, 10, 12, 13 ]
 
         assert actual == expected
+
+
+    def test_merge_with_empty_list(self):
+        first = []
+        second = [0, 3, 12, 13]
+
+        actual = merge(first, second)
+        expected = [0, 3, 12, 13]
+
+        assert actual == expected
