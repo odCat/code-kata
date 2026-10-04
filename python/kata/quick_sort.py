@@ -1,2 +1,2 @@
-def quick_sort(arr, left=0, right=None):
+def quick_sort(arr: list[int], left: int = 0, right: int | None = None) -> list[int]:
     pass
