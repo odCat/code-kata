@@ -1,2 +1,2 @@
-def fizz_buzz(number):
-    pass
+def fizz_buzz(number: int) -> str:
+        return ""

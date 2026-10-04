@@ -1,3 +1,5 @@
+from hypothesis import given, strategies as some
+
 from kata.fizz_buzz import fizz_buzz
 
 
@@ -26,3 +28,15 @@ class TestFizzBuzz:
         expected = "8"
 
         assert actual == expected
+
+    @given(some.integers().filter(lambda x: x % 5 != 0 and x % 3 != 0))
+    def test_always_returns_a_number(self, num):
+        assert fizz_buzz(num) == str(num)
+
+    @given(some.integers().filter(lambda x: x % 3 == 0 and x % 5 != 0))
+    def test_fizz_for_all_multiples_of_three(self, num):
+        assert fizz_buzz(num) == "Fizz"
+
+    @given(some.integers().filter(lambda x: x % 5 == 0 and x % 3 != 0))
+    def test_buzz_for_all_multiples_of_five(self, num):
+        assert fizz_buzz(num) == "Buzz"
