@@ -20,7 +20,9 @@ public class SingletonTest {
     void createdOnlyOneInstance() {
         Singleton firstInstance = Singleton.getInstance();
         Singleton secondInstance = Singleton.getInstance();
+        Singleton thirdInstance = Singleton.getInstance();
 
         assertSame(firstInstance, secondInstance);
+        assertSame(secondInstance, thirdInstance);
     }
 }
