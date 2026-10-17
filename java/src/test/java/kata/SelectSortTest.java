@@ -1,9 +1,13 @@
 package kata;
 
-import org.junit.jupiter.api.Test;
-
 import static kata.SelectSort.selectSort;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import net.jqwik.api.ForAll;
+import net.jqwik.api.Property;
+import org.junit.jupiter.api.Test;
 
 
 public class SelectSortTest
@@ -56,5 +60,19 @@ public class SelectSortTest
         int[] expected = { 5 };
 
         assertArrayEquals(expected, actual);
+    }
+
+    @Property
+    void testLengthDoesNotChange(@ForAll int[] nums) {
+        int initialLength = nums.length;
+        assertEquals(initialLength, selectSort(nums).length);
+    }
+
+    @Property
+    void testElementsAreAscending(@ForAll int[] nums) {
+        int[] sorted = selectSort(nums);
+        for (int i = 0; i < sorted.length-1; ++i) {
+            assertTrue(nums[i] <= nums[i+1]);
+        }
     }
 }
