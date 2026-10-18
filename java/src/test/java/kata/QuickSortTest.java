@@ -1,8 +1,13 @@
 package kata;
 
+import static helper.Helper.printArray;
 import static kata.QuickSort.quickSort;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import net.jqwik.api.ForAll;
+import net.jqwik.api.Property;
 import org.junit.jupiter.api.Test;
 
 
@@ -56,5 +61,19 @@ public class QuickSortTest
         int[] expected = { 5 };
 
         assertArrayEquals(expected, actual);
+    }
+
+    @Property
+    void testTheNumberOfElementsRemainsTheSame(@ForAll int[] nums) {
+        int initialLength = nums.length;
+        assertEquals(initialLength, quickSort(nums).length);
+    }
+
+    @Property
+    void testElementsAreOrderedAscending(@ForAll int[] nums) {
+        int[] sorted = quickSort(nums);
+        for (int i = 0; i < nums.length-1; ++i) {
+            assertTrue(sorted[i] <= sorted[i+1]);
+        }
     }
 }
